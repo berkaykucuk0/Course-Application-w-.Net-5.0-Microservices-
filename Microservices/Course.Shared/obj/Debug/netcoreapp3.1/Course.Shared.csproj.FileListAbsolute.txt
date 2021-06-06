@@ -1,0 +1,9 @@
+C:\Users\kucuk\source\repos\Microservices\Course.Shared\bin\Debug\netcoreapp3.1\Course.Shared.deps.json
+C:\Users\kucuk\source\repos\Microservices\Course.Shared\bin\Debug\netcoreapp3.1\Course.Shared.dll
+C:\Users\kucuk\source\repos\Microservices\Course.Shared\bin\Debug\netcoreapp3.1\Course.Shared.pdb
+C:\Users\kucuk\source\repos\Microservices\Course.Shared\obj\Debug\netcoreapp3.1\Course.Shared.AssemblyInfoInputs.cache
+C:\Users\kucuk\source\repos\Microservices\Course.Shared\obj\Debug\netcoreapp3.1\Course.Shared.AssemblyInfo.cs
+C:\Users\kucuk\source\repos\Microservices\Course.Shared\obj\Debug\netcoreapp3.1\Course.Shared.csproj.CoreCompileInputs.cache
+C:\Users\kucuk\source\repos\Microservices\Course.Shared\obj\Debug\netcoreapp3.1\Course.Shared.dll
+C:\Users\kucuk\source\repos\Microservices\Course.Shared\obj\Debug\netcoreapp3.1\Course.Shared.pdb
+C:\Users\kucuk\source\repos\Microservices\Course.Shared\obj\Debug\netcoreapp3.1\Course.Shared.csprojAssemblyReference.cache
