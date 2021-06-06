@@ -1,6 +1,8 @@
+using Course.Services.Order.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,9 +24,19 @@ namespace Course.Services.Order.API
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //  configure.MigrationsAssembly("Course.Services.Order.Infrastructure") meaning: Create Migrations Folder in Infrastructure Layer
+            services.AddDbContext<OrderDbContext>(options =>
+               options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),configure=>
+               {
+                   configure.MigrationsAssembly("Course.Services.Order.Infrastructure");
+               }));
+
+
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -33,7 +45,7 @@ namespace Course.Services.Order.API
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

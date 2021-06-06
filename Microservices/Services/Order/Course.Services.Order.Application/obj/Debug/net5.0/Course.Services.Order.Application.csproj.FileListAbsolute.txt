@@ -17,3 +17,5 @@ C:\Users\kucuk\source\repos\Microservices\Services\Order\Course.Services.Order.A
 C:\Users\kucuk\source\repos\Microservices\Services\Order\Course.Services.Order.Application\bin\Debug\net5.0\Course.Services.Order.Infrastructure.pdb
 C:\Users\kucuk\source\repos\Microservices\Services\Order\Course.Services.Order.Application\bin\Debug\net5.0\Course.Services.Order.Domain.Core.pdb
 C:\Users\kucuk\source\repos\Microservices\Services\Order\Course.Services.Order.Application\obj\Debug\net5.0\Course.Services.Order.Application.csproj.CopyComplete
+C:\Users\kucuk\source\repos\Microservices\Services\Order\Course.Services.Order.Application\bin\Debug\net5.0\Course.Shared.dll
+C:\Users\kucuk\source\repos\Microservices\Services\Order\Course.Services.Order.Application\bin\Debug\net5.0\Course.Shared.pdb
