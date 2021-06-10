@@ -19,7 +19,7 @@ namespace Course.Gateway
         public static IHostBuilder CreateHostBuilder(string[] args) =>
 
             //here is for json files
-            Host.CreateDefaultBuilder(args).ConfigureAppConfiguration((hostingContext,config)=>
+            Host.CreateDefaultBuilder(args).ConfigureAppConfiguration((hostingContext, config) =>
             {
                 config.AddJsonFile($"configuration.{hostingContext.HostingEnvironment.EnvironmentName.ToLower()}.json").AddEnvironmentVariables();
             })

@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "SignIn";
+    Layout = "~/Views/Shared/_UserLoginLayout.cshtml";
+    ViewBag.Title = "Sign In";
+}
+@model Course.Web.Models.SigninInput
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4"><span class="fas fa-house-user"></span> Giriş Yap</h3></div>
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                <div class="card-body">
+                    <form asp-controller="Auth" asp-action="SignIn" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Email" for="exampleInputEmail1" class="form-label"></label>
+                            <input class="form-control py-4" value="f-cakiroglu@outlook.com" asp-for="Email" type="email" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password" for="exampleInputPassword1" class="form-label"></label>
+                            <input type="password" value="Password12*" asp-for="Password" class="form-control py-4" id="exampleInputPassword1">
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" asp-for="IsRemember" type="checkbox" id="exampleCheck1" />
+                                <label class="custom-control-label" asp-for="IsRemember" for="exampleCheck1"></label>
+                            </div>
+                        </div>
+                        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                            <a class="btn btn-secondary text-white"><span class="fas fa-user-lock"></span> Forgot Password</a>
+                            <button class="btn btn-primary" type="submit"><span class="fas fa-sign-in-alt"></span>Sign in</button>
+                        </div>
+                    </form>
+                </div>
+                @*<div class="card-footer text-center">
+            <a class="btn btn-success btn-block text-white"><span class="fas fa-user-edit"></span>Register</a>
+        </div>*@
+            </div>
+        </div>
+    </div>
+</div>
