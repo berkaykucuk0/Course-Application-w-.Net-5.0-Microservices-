@@ -8,12 +8,12 @@ namespace Course.Shared.Dtos
     
     public class Response<T>
     {
-        public T  Data { get; private set; }
+        public T  Data { get;  set; }
 
         [JsonIgnore] //Dont show when fetching
-        public int StatusCode { get; private set; }
-        public bool IsSuccessfull  { get; private set; }       
-        public List<string> Errors { get; private set; }       //if it fails
+        public int StatusCode { get;  set; }
+        public bool IsSuccessfull  { get;  set; }       
+        public List<string> Errors { get;  set; }       //if it fails
 
 
         // Static Factory Methods

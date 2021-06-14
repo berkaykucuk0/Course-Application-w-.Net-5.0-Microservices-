@@ -1,3 +1,5 @@
+using Course.Shared.Services.Abstract;
+using Course.Shared.Services.Concrede;
 using Course.Web.ClientsInfo;
 using Course.Web.Handlers;
 using Course.Web.Services.Abstract;
@@ -37,10 +39,12 @@ namespace Course.Web
             //Match ServiceApiSettings class with ServiceApiSettings in appsettings.json
             services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
             #endregion
-            #region DI
+            #region dependency injection
             services.AddScoped<ResourceOwnerPasswordTokenHandler>();
+            services.AddScoped<ClientCredentialTokenHandler>();
+            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
             #endregion
-            #region Jwt
+            #region jwt
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme,
                 opt =>
@@ -52,9 +56,10 @@ namespace Course.Web
                 });
 
             #endregion
-            #region Idendtity Service Configrutation
+            #region communication with apis 
             services.AddHttpContextAccessor();
             services.AddHttpClient<IIdentityService, IdentityService>();
+            services.AddHttpClient<IClientCredentialTokenService, ClientCredentialTokenService>();
 
             var serviceApiSettings = Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
 
@@ -62,6 +67,15 @@ namespace Course.Web
             {
                 opt.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri);
             }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
+            services.AddHttpClient<ICatalogService, CatalogService>(opt =>
+            {
+                opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.Catalog.Path}");
+            }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
+
+
+            //for a client credential ClientAccessTokenCache class
+            services.AddAccessTokenManagement();
             #endregion
 
 

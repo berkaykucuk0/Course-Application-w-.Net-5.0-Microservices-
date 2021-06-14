@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "eXL8lB8JkgEFfDP8SI5rOmrFcebFMhg42L+D5a4qQuk83vjluhNU0jtmsAxQLkheL6qUV6sjgzpf74ahWatKpA==",
+  "dgSpecHash": "d2r6icLUSpngGwsQxou7knfe5KcspDkzHYvYf4Rp91KyewuYaAE2ERZAJR4e0XO9mbm0CZsFUvpJ5KzODVyIpQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\kucuk\\source\\repos\\Microservices\\FrontEnds\\Course.Web\\Course.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kucuk\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\identitymodel\\5.1.0\\identitymodel.5.1.0.nupkg.sha512",
+    "C:\\Users\\kucuk\\.nuget\\packages\\identitymodel.aspnetcore\\3.0.0\\identitymodel.aspnetcore.3.0.0.nupkg.sha512",
+    "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\5.0.0\\microsoft.aspnetcore.authentication.openidconnect.5.0.0.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
