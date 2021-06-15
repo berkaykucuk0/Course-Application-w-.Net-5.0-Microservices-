@@ -133,3 +133,4 @@ C:\Users\kucuk\source\repos\Microservices\FrontEnds\Course.Web\bin\Debug\net5.0\
 C:\Users\kucuk\source\repos\Microservices\FrontEnds\Course.Web\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 C:\Users\kucuk\source\repos\Microservices\FrontEnds\Course.Web\obj\Debug\net5.0\Razor\Views\Course\Index.cshtml.g.cs
 C:\Users\kucuk\source\repos\Microservices\FrontEnds\Course.Web\obj\Debug\net5.0\Razor\Views\Course\Create.cshtml.g.cs
+C:\Users\kucuk\source\repos\Microservices\FrontEnds\Course.Web\obj\Debug\net5.0\Razor\Views\Course\Update.cshtml.g.cs

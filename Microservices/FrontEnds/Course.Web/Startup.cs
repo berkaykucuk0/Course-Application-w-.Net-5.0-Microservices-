@@ -2,6 +2,7 @@ using Course.Shared.Services.Abstract;
 using Course.Shared.Services.Concrede;
 using Course.Web.ClientsInfo;
 using Course.Web.Handlers;
+using Course.Web.Helpers;
 using Course.Web.Services.Abstract;
 using Course.Web.Services.Concrede;
 using Course.Web.Settings;
@@ -43,6 +44,7 @@ namespace Course.Web
             services.AddScoped<ResourceOwnerPasswordTokenHandler>();
             services.AddScoped<ClientCredentialTokenHandler>();
             services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+            services.AddSingleton<PhotoHelper>();
             #endregion
             #region jwt
 
@@ -61,24 +63,28 @@ namespace Course.Web
             services.AddHttpClient<IIdentityService, IdentityService>();
             services.AddHttpClient<IClientCredentialTokenService, ClientCredentialTokenService>();
 
+
+            //Establish to apis but client credentials
             var serviceApiSettings = Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
 
             services.AddHttpClient<IUserService, UserService>(opt =>
             {
                 opt.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri);
             }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
-
+         
             services.AddHttpClient<ICatalogService, CatalogService>(opt =>
             {
                 opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.Catalog.Path}");
             }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
 
+            services.AddHttpClient<IPhotoStockService, PhotoStockService>(opt =>
+            {
+                opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.PhotoStock.Path}");
+            }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
 
             //for a client credential ClientAccessTokenCache class
             services.AddAccessTokenManagement();
             #endregion
-
-
 
             services.AddControllersWithViews();
 

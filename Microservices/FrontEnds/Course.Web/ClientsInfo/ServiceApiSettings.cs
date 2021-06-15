@@ -11,6 +11,7 @@ namespace Course.Web.Settings
         public string GatewayBaseUri { get; set; }
         public string PhotoStockUri { get; set; }
         public ApiPath Catalog { get; set; }
+        public ApiPath PhotoStock { get; set; }
     }
     public class ApiPath
     {
