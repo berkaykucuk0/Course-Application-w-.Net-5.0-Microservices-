@@ -30,7 +30,7 @@ namespace Course.IdentityServer.Services
             {
                 //if you want you don't write here
                 var errors = new Dictionary<string, object>();
-                errors.Add("errors", new List<string> { "Email veya şifreniz yanlış" });
+                errors.Add("errors", new List<string> { "Email or password is incorrect" });
                 context.Result.CustomResponse = errors;
 
 
@@ -42,7 +42,7 @@ namespace Course.IdentityServer.Services
             if (passwordCheck == false)
             {
                 var errors = new Dictionary<string, object>();
-                errors.Add("errors", new List<string> { "Email veya şifreniz yanlış" });
+                errors.Add("errors", new List<string> { "Email or password is incorrect" });
                 context.Result.CustomResponse = errors;
 
                 return;

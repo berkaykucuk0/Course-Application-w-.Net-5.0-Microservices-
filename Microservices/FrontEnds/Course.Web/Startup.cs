@@ -1,11 +1,14 @@
 using Course.Shared.Services.Abstract;
 using Course.Shared.Services.Concrede;
 using Course.Web.ClientsInfo;
+using Course.Web.Extension;
 using Course.Web.Handlers;
 using Course.Web.Helpers;
 using Course.Web.Services.Abstract;
 using Course.Web.Services.Concrede;
 using Course.Web.Settings;
+using Course.Web.Validators;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -46,47 +49,27 @@ namespace Course.Web
             services.AddScoped<ISharedIdentityService, SharedIdentityService>();
             services.AddSingleton<PhotoHelper>();
             #endregion
-            #region jwt
+          
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme,
-                opt =>
-                {
-                    opt.LoginPath = "/Auth/SignIn";
-                    opt.ExpireTimeSpan = TimeSpan.FromDays(60);
-                    opt.SlidingExpiration = true;
-                    opt.Cookie.Name = "webcookie";
-                });
-
-            #endregion
-            #region communication with apis 
-            services.AddHttpContextAccessor();
-            services.AddHttpClient<IIdentityService, IdentityService>();
-            services.AddHttpClient<IClientCredentialTokenService, ClientCredentialTokenService>();
-
-
-            //Establish to apis but client credentials
-            var serviceApiSettings = Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
-
-            services.AddHttpClient<IUserService, UserService>(opt =>
-            {
-                opt.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri);
-            }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
-         
-            services.AddHttpClient<ICatalogService, CatalogService>(opt =>
-            {
-                opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.Catalog.Path}");
-            }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
-
-            services.AddHttpClient<IPhotoStockService, PhotoStockService>(opt =>
-            {
-                opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.PhotoStock.Path}");
-            }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
-
+            //Cookie oriented authentication
+            
+            services.AddHttpContextAccessor();       
+            
             //for a client credential ClientAccessTokenCache class
             services.AddAccessTokenManagement();
-            #endregion
 
-            services.AddControllersWithViews();
+            //in Extension Class
+            services.AddHttpClientServices(Configuration);
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, opts =>
+            {
+                opts.LoginPath = "/Auth/SignIn";
+                opts.ExpireTimeSpan = TimeSpan.FromDays(60);
+                opts.SlidingExpiration = true;
+                opts.Cookie.Name = "webcookie";
+            });
+
+            //fluent validation
+            services.AddControllersWithViews().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CourseCreateModelValidator>());
 
         }
 
@@ -104,9 +87,9 @@ namespace Course.Web
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
+           
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

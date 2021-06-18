@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Course.Web.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class CourseController : Controller
     {
         private readonly ICatalogService _catalogService;

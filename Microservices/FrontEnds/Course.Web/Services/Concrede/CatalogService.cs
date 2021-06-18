@@ -50,7 +50,7 @@ namespace Course.Web.Services.Concrede
             //Get photo from photostock
             responseData.Data.ForEach(x =>
             {
-                x.Picture = _photoHelper.GetPhotoStockUrl(x.Picture);
+                x.StockPictureUrl = _photoHelper.GetPhotoStockUrl(x.Picture);
             });
 
             return responseData.Data;
@@ -69,7 +69,7 @@ namespace Course.Web.Services.Concrede
             //Get photo from photostock
             responseData.Data.ForEach(x =>
             {
-                x.Picture = _photoHelper.GetPhotoStockUrl(x.Picture);
+                x.StockPictureUrl = _photoHelper.GetPhotoStockUrl(x.Picture);
             });
             return responseData.Data;
         }
@@ -100,6 +100,7 @@ namespace Course.Web.Services.Concrede
             }
 
             var responseData = await response.Content.ReadFromJsonAsync<Response<CourseViewModel>>();
+            responseData.Data.StockPictureUrl = _photoHelper.GetPhotoStockUrl(responseData.Data.Picture);
             return responseData.Data;
         }
         public async Task<bool> UpdateCourseAsync(CourseUpdateModel courseUpdateInput)
