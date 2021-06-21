@@ -1,3 +1,4 @@
+using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -45,6 +46,22 @@ namespace Course.Services.FakePayment
                 opt.RequireHttpsMetadata = false; //if we run the project with http we should do this
 
             });
+            services.AddMassTransitHostedService();
+
+            //masstransit rabbitmq messagebroker configuration. Default port 5672
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    cfg.Host(Configuration["RabbitMQUrl"], "/", host =>
+                    {
+                        //host configuration
+                        host.Username("guest");
+                        host.Password("guest");
+                    });
+                });
+            });
+
 
             //for use httpcontextaccessor in Course.Shared project -SharedIdentityService 
             services.AddHttpContextAccessor();

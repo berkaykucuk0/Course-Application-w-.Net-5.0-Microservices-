@@ -40,8 +40,15 @@ using Course.Web.Models.Baskets;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\kucuk\source\repos\Microservices\FrontEnds\Course.Web\Views\_ViewImports.cshtml"
+using Course.Web.Models.Orders;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6a5625cc8fb4476f348b0fe9041c550465d8bf9", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"13de334c5a17d8ea3db4e6de0ed08e9b05235f05", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"596f41c8317c1063ee9359060765abfedb968fe8", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998

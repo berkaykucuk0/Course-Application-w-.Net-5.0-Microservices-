@@ -14,6 +14,8 @@ namespace Course.Web.Settings
         public ApiPath PhotoStock { get; set; }
         public ApiPath Basket { get; set; }
         public ApiPath Discount { get; set; }
+        public ApiPath Payment { get; set; }
+        public ApiPath Order { get; set; }
     }
     public class ApiPath
     {
