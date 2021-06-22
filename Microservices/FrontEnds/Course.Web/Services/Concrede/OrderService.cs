@@ -97,9 +97,40 @@ namespace Course.Web.Services.Concrede
             return response.Data;
         }
 
-        public async Task SuspendOrder(CheckOutModel checkoutInfoModel)
+        public async Task<OrderSuspendViewModel> SuspendOrder(CheckOutModel checkoutInfoModel)
         {
-            throw new NotImplementedException();
+            var basket = await _basketService.GetAsync();
+            var orderCreateModel = new OrderCreateModel()
+            {
+                BuyerId = _sharedIdentityService.GetUserId,
+                Address = new AddressCreateModel { Province = checkoutInfoModel.Province, District = checkoutInfoModel.District, Street = checkoutInfoModel.Street, Line = checkoutInfoModel.Line, ZipCode = checkoutInfoModel.ZipCode },
+            };
+
+            basket.BasketItems.ForEach(x =>
+            {
+                var orderItem = new OrderItemCreateModel { ProductId = x.CourseId, Price = x.GetCurrentPrice, PictureUrl = "", ProductName = x.CourseName };
+                orderCreateModel.OrderItems.Add(orderItem);
+            });
+
+            var paymentInfoInput = new PaymentInfoModel()
+            {
+                CardName = checkoutInfoModel.CardName,
+                CardNumber = checkoutInfoModel.CardNumber,
+                Expiration = checkoutInfoModel.Expiration,
+                CVV = checkoutInfoModel.CVV,
+                TotalPrice = basket.TotalPrice,
+                Order = orderCreateModel
+            };
+
+            var responsePayment = await _paymentService.ReceivePayment(paymentInfoInput);
+
+            if (!responsePayment)
+            {
+                return new OrderSuspendViewModel() { Error = "Payment error", IsSuccess = false };
+            }
+
+            await _basketService.DeleteAsync();
+            return new OrderSuspendViewModel() { IsSuccess = true };
         }
     }
 }

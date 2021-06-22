@@ -1,6 +1,8 @@
+using Course.Services.Order.Application.Consumers;
 using Course.Services.Order.Infrastructure;
 using Course.Shared.Services.Abstract;
 using Course.Shared.Services.Concrede;
+using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -76,7 +78,27 @@ namespace Course.Services.Order.API
             services.AddScoped<ISharedIdentityService, SharedIdentityService>();
             services.AddHttpContextAccessor();
 
+            //masstransit rabbitmq messagebroker configuration. Default port 5672
+            services.AddMassTransit(x =>
+            {
+                x.AddConsumer<CreateOrderMessageCommandConsumer>();
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    cfg.Host(Configuration["RabbitMQUrl"], "/", host =>
+                    {
+                        //host configuration
+                        host.Username("guest");
+                        host.Password("guest");
+                    });
+                    cfg.ReceiveEndpoint("create-order-service", e =>
+                    {
+                        e.ConfigureConsumer<CreateOrderMessageCommandConsumer>(context);
+                    });
+                });
 
+             
+            });
+            services.AddMassTransitHostedService();
 
 
             //Mediatr Implementation

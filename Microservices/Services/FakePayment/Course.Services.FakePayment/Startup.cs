@@ -46,7 +46,7 @@ namespace Course.Services.FakePayment
                 opt.RequireHttpsMetadata = false; //if we run the project with http we should do this
 
             });
-            services.AddMassTransitHostedService();
+           
 
             //masstransit rabbitmq messagebroker configuration. Default port 5672
             services.AddMassTransit(x =>
@@ -61,7 +61,7 @@ namespace Course.Services.FakePayment
                     });
                 });
             });
-
+            services.AddMassTransitHostedService();
 
             //for use httpcontextaccessor in Course.Shared project -SharedIdentityService 
             services.AddHttpContextAccessor();

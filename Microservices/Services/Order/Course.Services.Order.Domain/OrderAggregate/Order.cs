@@ -40,7 +40,7 @@ namespace Course.Services.Order.Domain.OrderAggregate
         public void AddOrderItem(string productId, string productName, decimal price, string pictureUrl)
         {
             var existProduct = _orderItems.Any(x => x.ProductId == productId);
-            if (existProduct)
+            if (!existProduct)
             {
                 OrderItem newOrderItem = new (productId, productName, pictureUrl, price);
                 _orderItems.Add(newOrderItem);

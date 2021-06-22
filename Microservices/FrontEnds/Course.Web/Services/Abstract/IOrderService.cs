@@ -20,7 +20,7 @@ namespace Course.Web.Services.Abstract
         /// </summary>
         /// <param name=""></param>
         /// <returns></returns>
-        Task SuspendOrder(CheckOutModel checkoutInfoModel);
+        Task<OrderSuspendViewModel> SuspendOrder(CheckOutModel checkoutInfoModel);
 
         Task<List<OrderViewModel>> GetOrder();
     }

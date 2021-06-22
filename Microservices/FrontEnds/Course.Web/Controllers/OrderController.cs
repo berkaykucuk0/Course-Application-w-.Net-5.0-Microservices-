@@ -30,7 +30,7 @@ namespace Course.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Checkout(CheckOutModel checkOutModel)
         {
-            //First way
+            /*First way
               var orderStatus = await _orderService.CreateOrder(checkOutModel);
             if (!orderStatus.IsSuccess)
             {
@@ -40,12 +40,30 @@ namespace Course.Web.Controllers
                 return View();
             }
             return RedirectToAction(nameof(SuccessfulCheckout), new { orderId = orderStatus.OrderId });
+            */
+
+            var orderSuspend = await _orderService.SuspendOrder(checkOutModel);
+            if (!orderSuspend.IsSuccess)
+            {
+                var basket = await _basketService.GetAsync();
+                ViewBag.basket = basket;
+                ViewBag.error = orderSuspend.Error;
+                return View();
+            }
+            return RedirectToAction(nameof(SuccessfulCheckout), new { orderId = new Random().Next(1, 1000) });
+
         }
 
         public IActionResult SuccessfulCheckout(int orderId)
         {
             ViewBag.orderId = orderId;
             return View();
+        }
+
+        public async Task<IActionResult> CheckOutHistory()
+        {
+           var orders= await _orderService.GetOrder();
+            return View(orders);
         }
     }
 }

@@ -141,3 +141,4 @@ C:\Users\kucuk\source\repos\Microservices\FrontEnds\Course.Web\obj\Debug\net5.0\
 C:\Users\kucuk\source\repos\Microservices\FrontEnds\Course.Web\obj\Debug\net5.0\Course.Web.genruntimeconfig.cache
 C:\Users\kucuk\source\repos\Microservices\FrontEnds\Course.Web\obj\Debug\net5.0\Razor\Views\Order\Checkout.cshtml.g.cs
 C:\Users\kucuk\source\repos\Microservices\FrontEnds\Course.Web\obj\Debug\net5.0\Razor\Views\Order\SuccessfulCheckout.cshtml.g.cs
+C:\Users\kucuk\source\repos\Microservices\FrontEnds\Course.Web\obj\Debug\net5.0\Razor\Views\Order\CheckOutHistory.cshtml.g.cs
