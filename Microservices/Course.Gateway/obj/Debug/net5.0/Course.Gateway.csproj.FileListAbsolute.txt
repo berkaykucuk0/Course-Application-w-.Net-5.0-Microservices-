@@ -40,3 +40,6 @@ C:\Users\kucuk\source\repos\Microservices\Course.Gateway\obj\Debug\net5.0\Course
 C:\Users\kucuk\source\repos\Microservices\Course.Gateway\obj\Debug\net5.0\ref\Course.Gateway.dll
 C:\Users\kucuk\source\repos\Microservices\Course.Gateway\obj\Debug\net5.0\Course.Gateway.pdb
 C:\Users\kucuk\source\repos\Microservices\Course.Gateway\obj\Debug\net5.0\Course.Gateway.genruntimeconfig.cache
+C:\Users\kucuk\source\repos\Microservices\Course.Gateway\bin\Debug\net5.0\IdentityModel.dll
+C:\Users\kucuk\source\repos\Microservices\Course.Gateway\bin\Debug\net5.0\System.Text.Encodings.Web.dll
+C:\Users\kucuk\source\repos\Microservices\Course.Gateway\bin\Debug\net5.0\System.Text.Json.dll

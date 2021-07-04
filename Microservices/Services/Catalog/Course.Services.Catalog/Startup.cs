@@ -1,6 +1,7 @@
 using Course.Services.Catalog.Services.Abstract;
 using Course.Services.Catalog.Services.Concrede;
 using Course.Services.Catalog.Settings;
+using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -53,7 +54,19 @@ namespace Course.Services.Catalog
                 return sp.GetRequiredService<IOptions<DatabaseSettings>>().Value;
             });
 
-
+            //masstransit rabbitmq messagebroker configuration. Default port 5672
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    cfg.Host(Configuration["RabbitMQUrl"], "/", host =>
+                    {
+                        //host configuration
+                        host.Username("guest");
+                        host.Password("guest");
+                    });
+                });
+            });
 
             services.AddControllers(opt=>
             {

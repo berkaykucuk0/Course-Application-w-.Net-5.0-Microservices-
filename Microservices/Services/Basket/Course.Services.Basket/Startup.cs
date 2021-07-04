@@ -1,8 +1,10 @@
+using Course.Services.Basket.Consumers;
 using Course.Services.Basket.Services.Abstract;
 using Course.Services.Basket.Services.Concrede;
 using Course.Services.Basket.Settings;
 using Course.Shared.Services.Abstract;
 using Course.Shared.Services.Concrede;
+using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -74,14 +76,41 @@ namespace Course.Services.Basket
                 opt.RequireHttpsMetadata = false; //if we run the project with http we should do this
 
             });
-
             //filter for JWT
-            services.AddControllers(opt=>
+            services.AddControllers(opt =>
             {
                 opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy));
             });
 
             #endregion
+            //#region masstransit rabbitmq
+            ////masstransit rabbitmq messagebroker configuration. Default port 5672
+            //services.AddMassTransit(x =>
+            //{
+
+            //    x.AddConsumer<CourseNameChangedEventConsumer>();
+            //    x.UsingRabbitMq((context, cfg) =>
+            //    {
+            //        cfg.Host(Configuration["RabbitMQUrl"], "/", host =>
+            //        {
+            //            //host configuration
+            //            host.Username("guest");
+            //            host.Password("guest");
+            //        });
+            //        cfg.ReceiveEndpoint("update-course-name-event", e =>
+            //        {
+            //            e.ConfigureConsumer<CourseNameChangedEventConsumer>(context);
+            //        });
+                   
+            //    });
+               
+
+            //});
+            //services.AddMassTransitHostedService();
+            //#endregion
+
+          
+
 
             services.AddSwaggerGen(c =>
             {

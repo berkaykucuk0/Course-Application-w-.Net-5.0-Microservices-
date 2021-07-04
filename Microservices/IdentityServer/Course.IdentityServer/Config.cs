@@ -59,18 +59,18 @@ namespace Course.IdentityServer
                    AllowedGrantTypes = GrantTypes.ClientCredentials,
                    AllowedScopes = { "catalog_fullpermission","photo_stock_fullpermission", "gateway_fullpermission" ,IdentityServerConstants.LocalApi.ScopeName }
                 },
-                 new Client
+                new Client
                 {
                    ClientName="Asp.Net Core MVC",
                     ClientId="WebMvcClientForUser",
                     AllowOfflineAccess=true,
                     ClientSecrets= {new Secret("secret".Sha256())},
                     AllowedGrantTypes= GrantTypes.ResourceOwnerPassword,
-                    AllowedScopes={"basket_fullpermission",
-                                   "discount_fullpermission",
-                                   "order_fullpermission",
-                                   "fakepayment_fullpermission",
+                    AllowedScopes={"basket_fullpermission",                             
+                                   "order_fullpermission",                                   
                                    "gateway_fullpermission",
+                                    "discount_fullpermission",
+                                     "fakepayment_fullpermission",
                                    IdentityServerConstants.StandardScopes.Email, 
                                    IdentityServerConstants.StandardScopes.OpenId,
                                    IdentityServerConstants.StandardScopes.Profile, 
@@ -81,7 +81,6 @@ namespace Course.IdentityServer
                     AbsoluteRefreshTokenLifetime= (int) (DateTime.Now.AddDays(60)- DateTime.Now).TotalSeconds,
                     RefreshTokenUsage= TokenUsage.ReUse
                 }
-
             };
     }
 }

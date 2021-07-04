@@ -82,6 +82,7 @@ namespace Course.Services.Order.API
             services.AddMassTransit(x =>
             {
                 x.AddConsumer<CreateOrderMessageCommandConsumer>();
+                x.AddConsumer<CourseNameChangedEventConsumer>();
                 x.UsingRabbitMq((context, cfg) =>
                 {
                     cfg.Host(Configuration["RabbitMQUrl"], "/", host =>
@@ -93,6 +94,10 @@ namespace Course.Services.Order.API
                     cfg.ReceiveEndpoint("create-order-service", e =>
                     {
                         e.ConfigureConsumer<CreateOrderMessageCommandConsumer>(context);
+                    });
+                    cfg.ReceiveEndpoint("update-course-name-event", e =>
+                    {
+                        e.ConfigureConsumer<CourseNameChangedEventConsumer>(context);
                     });
                 });
 

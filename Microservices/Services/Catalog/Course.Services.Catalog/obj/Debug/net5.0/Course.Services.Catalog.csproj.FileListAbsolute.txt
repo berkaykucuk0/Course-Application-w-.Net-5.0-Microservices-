@@ -50,3 +50,14 @@ C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catal
 C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catalog\obj\Debug\net5.0\ref\Course.Services.Catalog.dll
 C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catalog\obj\Debug\net5.0\Course.Services.Catalog.pdb
 C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catalog\obj\Debug\net5.0\Course.Services.Catalog.genruntimeconfig.cache
+C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catalog\bin\Debug\net5.0\Automatonymous.dll
+C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catalog\bin\Debug\net5.0\GreenPipes.dll
+C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catalog\bin\Debug\net5.0\MassTransit.dll
+C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catalog\bin\Debug\net5.0\MassTransit.AspNetCoreIntegration.dll
+C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catalog\bin\Debug\net5.0\MassTransit.ExtensionsDependencyInjectionIntegration.dll
+C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catalog\bin\Debug\net5.0\MassTransit.RabbitMqTransport.dll
+C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catalog\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catalog\bin\Debug\net5.0\NewId.dll
+C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catalog\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catalog\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\kucuk\source\repos\Microservices\Services\Catalog\Course.Services.Catalog\bin\Debug\net5.0\RabbitMQ.Client.dll

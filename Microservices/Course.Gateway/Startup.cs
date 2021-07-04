@@ -1,3 +1,4 @@
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -23,6 +24,7 @@ namespace Course.Gateway
         }
         public void ConfigureServices(IServiceCollection services)
         {
+
             #region JWT
             services.AddAuthentication().AddJwtBearer("GatewayAuthenticationScheme", options =>
             {
@@ -34,9 +36,10 @@ namespace Course.Gateway
             #endregion
             //ocelot service added
             services.AddOcelot();
+            
         }
 
-        // write async
+        // write async here
         async public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
