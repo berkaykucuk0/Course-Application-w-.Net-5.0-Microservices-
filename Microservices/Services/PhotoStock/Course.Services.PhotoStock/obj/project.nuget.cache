@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ms1O/VsJwdnQe/0IkyRaOOhdG0dHl4gkiNlKNdorYFSVUM4oAkbv+jxwM5NPRrMF3vhS6OkiZijoUGy4ogHlDQ==",
+  "dgSpecHash": "OwYz5bRHpXsodxLfUOBCus/syVYBbtQPaWg16waxp2m2vIQMMsotdNC2ghBx0WRx07gMrAsuUyZd6/CjvA5KGA==",
   "success": true,
   "projectFilePath": "C:\\Users\\kucuk\\source\\repos\\Microservices\\Services\\PhotoStock\\Course.Services.PhotoStock\\Course.Services.PhotoStock.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.7.1\\microsoft.identitymodel.protocols.openidconnect.6.7.1.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.7.1\\microsoft.identitymodel.tokens.6.7.1.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.13\\microsoft.visualstudio.azure.containers.tools.targets.1.10.13.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\swashbuckle.aspnetcore\\6.1.4\\swashbuckle.aspnetcore.6.1.4.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.1.4\\swashbuckle.aspnetcore.swagger.6.1.4.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.1.4\\swashbuckle.aspnetcore.swaggergen.6.1.4.nupkg.sha512",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5zPwBRmLsTjRbjpoRUK1UDnrGDaqYNAi1Ov7H/LbF59iOHTlwHPyudhaliTK60iCT26qNEq4DOcOv96Biwb0dg==",
+  "dgSpecHash": "9wbJxHav0PA2vdHMJl7VmJg1NgMWxOEpbPuXpl9bIM3FTY+FlSOFUvDZ0DQ7ugYAI+K4xO5ZAqkeLuTAwBOGMA==",
   "success": true,
   "projectFilePath": "C:\\Users\\kucuk\\source\\repos\\Microservices\\Services\\FakePayment\\Course.Services.FakePayment\\Course.Services.FakePayment.csproj",
   "expectedPackageFiles": [
@@ -31,6 +31,7 @@
     "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.13\\microsoft.visualstudio.azure.containers.tools.targets.1.10.13.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\newid\\3.0.3\\newid.3.0.3.nupkg.sha512",

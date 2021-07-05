@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zo2IsxC66+Mx53uDXuuFK0RPLc6rcy6JekBJz5R+9xBbvk7MmYweFNLS9tdjXq2tpBrXBG/krH5nwOmx++Gvng==",
+  "dgSpecHash": "vT4FhMNJ4wIZJn1PJwCyqB/T1i+oro7MpKGtdnDQcPJYPjGL+s7ZjNPVGgCZioF2TPDEver8+24OQKMlrAQ7lw==",
   "success": true,
   "projectFilePath": "C:\\Users\\kucuk\\source\\repos\\Microservices\\Services\\Discount\\Course.Services.Discount\\Course.Services.Discount.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.7.1\\microsoft.identitymodel.protocols.openidconnect.6.7.1.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.7.1\\microsoft.identitymodel.tokens.6.7.1.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\kucuk\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.13\\microsoft.visualstudio.azure.containers.tools.targets.1.10.13.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\npgsql\\5.0.5\\npgsql.5.0.5.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\kucuk\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
