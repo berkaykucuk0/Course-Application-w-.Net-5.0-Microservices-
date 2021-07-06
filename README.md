@@ -4,6 +4,7 @@ Course Application  with .Net 5.0 Microservice Architecture
 Course Application microservices backend with basic UI template
 
 ![Ekran Alıntısı](https://user-images.githubusercontent.com/73891330/124637721-c5cbee80-de92-11eb-9985-6a31c64464a0.PNG)
+![Ekran Alıntısı](https://user-images.githubusercontent.com/73891330/124638168-50ace900-de93-11eb-9683-22ffb1325928.PNG)
 
 Microservices:
 
