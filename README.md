@@ -10,7 +10,7 @@ Microservices:
 
 Catalog Microservice:
 .Responsible for keeping and presenting information about courses
-.MongoDb (Veritabanı)
+.MongoDb (Db)
 .One-To-Many/One-To-One relationship
  
 Discount Microservice
